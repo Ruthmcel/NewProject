@@ -41,7 +41,10 @@ view: products {
     type: string
     sql: ${TABLE}.sku ;;
   }
-
+  measure: sum {
+    type: sum
+    sql:ROUND(1.0 * ${retail_price},2) ;;
+  }
   measure: count {
     type: count
     drill_fields: [id, item_name, inventory_items.count]
